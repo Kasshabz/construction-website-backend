@@ -23,6 +23,8 @@ const transporter = nodemailer.createTransport({
 app.post('/send', (req, res) => {
   const { name, email, message } = req.body;
 
+  console.log('Received form data:', req.body); // Log the form data
+
   const mailOptions = {
     from: email,
     to: process.env.RECEIVER_EMAIL,
