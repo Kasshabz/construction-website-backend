@@ -10,6 +10,11 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to my backend server!');
+});
+
+
 // Nodemailer transporter setup
 const transporter = nodemailer.createTransport({
   service: 'gmail', // You can use other services as well
